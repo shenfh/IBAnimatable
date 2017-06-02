@@ -115,38 +115,38 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
   }
 
   // MARK: - PaddingDesignable
-  
+
   @IBInspectable open var leftTextPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var rightTextPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var sideTextPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var leftEditPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var rightEditPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var sideEditPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var leftPlaceholderPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var rightPlaceholderPadding: CGFloat = CGFloat.nan
-  
+
   @IBInspectable open var sidePlaceholderPadding: CGFloat = CGFloat.nan
-  
+
   override open func textRect(forBounds bounds: CGRect) -> CGRect {
-    let shouldNotModify = leftTextPadding.isNaN && rightTextPadding.isNaN && sideTextPadding.isNaN
-    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, textRectInsets)
+    let dontModify = leftTextPadding.isNaN && rightTextPadding.isNaN && sideTextPadding.isNaN
+    return dontModify ? bounds : UIEdgeInsetsInsetRect(bounds, textRectInsets)
   }
-  
+
   override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-    let shouldNotModify = leftEditPadding.isNaN && rightEditPadding.isNaN && sideEditPadding.isNaN
-    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, editRectInsets)
+    let dontModify = leftEditPadding.isNaN && rightEditPadding.isNaN && sideEditPadding.isNaN
+    return dontModify ? bounds : UIEdgeInsetsInsetRect(bounds, editRectInsets)
   }
-  
+
   override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-    let shouldNotModify = leftPlaceholderPadding.isNaN && rightPlaceholderPadding.isNaN && sidePlaceholderPadding.isNaN
-    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, placeholderRectInsets)
+    let dontModify = leftPlaceholderPadding.isNaN && rightPlaceholderPadding.isNaN && sidePlaceholderPadding.isNaN
+    return dontModify ? bounds : UIEdgeInsetsInsetRect(bounds, placeholderRectInsets)
   }
 
   // MARK: - SideImageDesignable
